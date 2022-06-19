@@ -74,7 +74,7 @@ organizationName        = blausee.eu
 commonName              = Blausee.eu Root Certification Authority
 
 countryName			        = Country Name (2 letter code)
-countryName_default		  = de
+countryName_default		  = DE
 
 stateOrProvinceName		  = State or Province Name (full name)
 stateOrProvinceName_default	= Hessen
