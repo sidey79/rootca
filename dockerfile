@@ -16,6 +16,7 @@ RUN umask 077;\
 WORKDIR /opt/rootca
 
 ADD https://raw.githubusercontent.com/sidey79/rootca/main/run.sh /opt/run.sh
+ADD https://raw.githubusercontent.com/sidey79/rootca/main/rootca.cnf /opt/rootca.cnf
 
 RUN chmod +x /opt/run.sh
 
