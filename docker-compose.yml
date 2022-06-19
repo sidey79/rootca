@@ -2,5 +2,6 @@ version: "3.3"
 services:
     rootca:
         build: .
+        network: none
         volumes: 
             - "/opt/docker/rootca/data:/opt/rootca/output"
