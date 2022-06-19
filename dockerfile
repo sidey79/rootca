@@ -3,7 +3,8 @@ FROM alpine:3.16
 LABEL maintainer="Sidey79"
 LABEL updated="2022-06-19"
 
-RUN apk update; apk add openssl
+RUN apk update; \
+    apk add openssl
 
 
 RUN mkdir -p /opt/rootca/output; \
