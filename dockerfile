@@ -10,4 +10,5 @@ WORKDIR /opt/rootca
 
 ADD https://raw.githubusercontent.com/sidey79/rootca/main/run.sh /opt/run.sh
 
-ENTRYPOINT ['/bin/sh', '/opt/run.sh']
+ENTRYPOINT ["/bin/sh", "/opt/run.sh"]
+
