@@ -9,3 +9,5 @@ RUN mkdir -p /opt/rootca; mkdir /opt/rootca/local; mkdir -p /opt/rootca/output
 WORKDIR /opt/rootca
 
 ADD run.sh /opt/run.sh
+
+ENTRYPOINT ['/bin/sh', '/opt/run.sh']
