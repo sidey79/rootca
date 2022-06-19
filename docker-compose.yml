@@ -2,6 +2,5 @@ version: "3.3"
 services:
     rootca:
         build: .
-        entrypoint: /opt/run.sh
         volumes: 
             - "/opt/docker/rootca/data:/opt/rootca"
