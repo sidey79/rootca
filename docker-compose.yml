@@ -1,0 +1,6 @@
+version: "3.3"
+services:
+    rootca:
+        build: .
+        volumes: 
+            - "/opt/docker/rootca/data:/opt/rootca"
