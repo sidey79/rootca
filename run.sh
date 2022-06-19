@@ -17,6 +17,10 @@ test -f $crlfile || echo 00 > $crlfile
 serialfile=/opt/template-ca/root-ca.serial
 test -f $serialfile || openssl rand -hex 16 > $serialfile
 
+randfile=/opt/template-ca/private/.rnd
+test -f $randfile || openssl rand -writerand $randfile
+
+
 while :; do
     sleep 1
 done
