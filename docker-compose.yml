@@ -3,4 +3,4 @@ services:
     rootca:
         build: .
         volumes: 
-            - "/opt/docker/rootca/data:/opt/rootca/output"
+            - "/opt/docker/rootca/:/opt/rootca/"
