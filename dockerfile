@@ -7,12 +7,6 @@ RUN apk update; \
     apk add openssl
 
 
-RUN umask 077;\
-    mkdir -p /opt/rootca/output; \
-    mkdir -p /opt/rootca/crl; \
-    mkdir -p /opt/rootca/private; \
-    mkdir -p /opt/rootca/newcerts
-
 WORKDIR /opt/rootca
 
 ADD https://raw.githubusercontent.com/sidey79/rootca/main/run.sh /opt/run.sh
