@@ -8,6 +8,6 @@ RUN apk update; apk add openssl
 RUN mkdir -p /opt/rootca; mkdir /opt/rootca/local; mkdir -p /opt/rootca/output
 WORKDIR /opt/rootca
 
-ADD run.sh /opt/run.sh
+ADD https://raw.githubusercontent.com/sidey79/rootca/main/run.sh /opt/run.sh
 
 ENTRYPOINT ['/bin/sh', '/opt/run.sh']
