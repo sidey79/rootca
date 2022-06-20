@@ -130,6 +130,13 @@ nsComment                       = "OpenSSL Generated Certificate"
 subjectKeyIdentifier=hash
 authorityKeyIdentifier=keyid,issuer
 
+[ user_ext ]
+keyUsage                = critical, digitalSignature
+extendedKeyUsage        = critical, clientAuth, emailProtection
+subjectKeyIdentifier    = hash
+authorityKeyIdentifier  = keyid:always
+issuerAltName           = issuer:copy
+
 
 #
 # Certificate download addresses for the root CA
