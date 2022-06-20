@@ -75,6 +75,12 @@ organizationName        =blausee.eu
 commonName              =Blausee.eu Root Certification Authority
 
 countryName			        = Country Name (2 letter code)
+countryName_default     = DE
+countryName_min         = 2
+countryName_max         = 2
+
+commonName              = Common Name (e.g. server FQDN or YOUR name)
+commonName_max          = 64
 
 stateOrProvinceName		  = State or Province Name (full name)
 stateOrProvinceName_default	=Hessen
