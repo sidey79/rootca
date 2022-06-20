@@ -36,6 +36,7 @@ preserve                = no
 email_in_dn             = no
 policy                  = policy
 unique_subject          = no
+x509_extensions         = usr_cert   # The extensions to add to the cert
 
 #
 # Distinguished Name Policy for CAs
@@ -88,24 +89,11 @@ localityName			     = Locality Name (eg, city)
 [ root-ca_ext ]
 basicConstraints        = critical, CA:true
 keyUsage                = critical, keyCertSign, cRLSign
-nameConstraints         = critical, @name_constraints
 subjectKeyIdentifier    = hash
 subjectAltName          = @subject_alt_name
 authorityKeyIdentifier  = keyid:always
 issuerAltName           = issuer:copy
 
-
-#
-# Intermediate CA Certificate Extensions
-[ intermed-ca_ext ]
-basicConstraints        = critical, CA:true, pathlen:0
-keyUsage                = critical, keyCertSign, cRLSign
-subjectKeyIdentifier    = hash
-subjectAltName          = @subject_alt_name
-authorityKeyIdentifier  = keyid:always
-issuerAltName           = issuer:copy
-authorityInfoAccess     = @auth_info_access
-crlDistributionPoints   = crl_dist
 
 #
 # CRL Certificate Extensions
@@ -119,15 +107,23 @@ issuerAltName           = issuer:copy
 URI                     = http://blausee.eu/
 email                   = s.butzek@gmx.de
 
+[ usr_cert ]
+
+# These extensions are added when 'ca' signs a request.
+
 #
-# Name Constraints
-[ name_constraints ]
-#permitted;DNS.1         = example.net
-#permitted;DNS.2         = example.org
-#permitted;DNS.3         = lan
-#permitted;DNS.4         = onion
-#permitted;email.1       = example.net
-#permitted;email.2       = example.org
+# This goes against PKIX guidelines but some CAs do it and some software
+# requires this to avoid interpreting an end user certificate as a CA.
+basicConstraints=CA:FALSE
+
+# This will be displayed in Netscape's comment listbox.
+nsComment                       = "OpenSSL Generated Certificate"
+
+#
+# PKIX recommendations harmless if included in all certificates.
+subjectKeyIdentifier=hash
+authorityKeyIdentifier=keyid,issuer
+
 
 #
 # Certificate download addresses for the root CA
