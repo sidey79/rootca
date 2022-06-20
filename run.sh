@@ -4,6 +4,7 @@ umask 077;
 mkdir -p /opt/template-ca/output
 mkdir -p /opt/template-ca/crl
 mkdir -p /opt/template-ca/private
+mkdir -p /opt/template-ca/private/users
 mkdir -p /opt/template-ca/newcerts
     
 export OPENSSL_CONF=/opt/rootca.cnf
