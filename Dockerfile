@@ -1,4 +1,4 @@
-FROM alpine:3.18.2
+FROM alpine:3.18.3
 
 LABEL maintainer="Sidey79"
 LABEL updated="2022-06-19"
